@@ -1,77 +1,97 @@
-# VA
+# 🎤 Pipecat AI Voice Assistant
 
-A Pipecat AI voice agent built with a cascade pipeline (STT → LLM → TTS).
+A fully interactive voice assistant powered by a **cascade voice AI pipeline** combining:
+**Speech-to-Text (STT) → Large Language Model (LLM) → Text-to-Speech (TTS)**.
 
-## Configuration
+Built using **Deepgram**, **OpenAI**, and **Cartesia**, with a web client using **WebRTC** for real-time streaming.
 
-- **Bot Type**: Web
-- **Transport(s)**: SmallWebRTC
-- **Pipeline**: Cascade
-  - **STT**: Deepgram
-  - **LLM**: OpenAI
-  - **TTS**: Cartesia
-- **Features**:
-  - smart-turn v3
+---
 
-## Setup
+## ✨ Features
 
-### Server
+- 🔊 Real-time smart voice assistant
+- 🧠 Works with any OpenAI model
+- 🗣️ Choice between **4 high-quality voices**
+- 🔗 Web-based interface powered by **SmallWebRTC**
+- 🪄 Modular pipeline implementation
 
-1. **Navigate to server directory**:
+---
 
-   ```bash
-   cd server
-   ```
+## 🧱 Tech Stack
 
-2. **Install dependencies**:
+| Component | Provider / Framework |
+|-----------|---------------------|
+| STT (Speech-to-Text) | Deepgram |
+| LLM | OpenAI |
+| TTS (Text-to-Speech) | Cartesia |
+| Transport | SmallWebRTC |
+| Server | Python |
+| Client | JavaScript / Vite |
 
-   ```bash
-   uv sync
-   ```
+---
 
-3. **Configure environment variables**:
+## 📦 Prerequisites
 
-   ```bash
-   cp .env.example .env
-   # Edit .env and add your API keys
-   ```
+| Service | Link |
+|---------|------|
+| OpenAI API | https://platform.openai.com/docs/overview |
+| Deepgram API | https://console.deepgram.com/ |
+| Cartesia API | https://docs.cartesia.ai/get-started/make-an-api-request |
 
-4. **Run the bot**:
+You will need to obtain API keys for each and configure them in your environment file.
 
-   - SmallWebRTC: `uv run bot.py`
+---
 
-### Client
+## 🚀 Getting Started
 
-1. **Navigate to client directory**:
+### 🖥️ Server Setup
 
-   ```bash
-   cd client
-   ```
+Install my-project with npm
 
-2. **Install dependencies**:
+```bash
+# Navigate to server directory
+cd server
+```
 
-   ```bash
-   npm install
-   ```
 
-3. **Configure environment variables**:
+```bash
+# Install all dependencies
+uv sync
+```
 
-   ```bash
-   cp env.example .env.local
-   # Edit .env.local if needed (defaults to localhost:7860)
-   ```
+```bash
+# make .env file and paste all apis in it use env.example for an example
+.env
+```
 
-   > **Note:** Environment variables in Vite are bundled into the client and exposed in the browser. For production applications that require secret protection, consider implementing a backend proxy server to handle API requests and manage sensitive credentials securely.
+```bash
+# run the server
+uv run bot.py
+```
 
-4. **Run development server**:
+### 🌐 Client Setup
+Install my-project with npm
 
-   ```bash
-   npm run dev
-   ```
+```bash
+# Navigate to client directory
+cd client
+```
 
-5. **Open browser**:
 
-   http://localhost:5173
+```bash
+# Install all dependencies
+npm install
+```
+
+```bash
+# start development server
+npm run dev
+```
+
+```bash
+# use the application
+http://localhost:5173
+```
 
 ## Project Structure
 
@@ -92,16 +112,5 @@ VA/
 └── README.md            # This file
 ```
 
-## Deploying to Pipecat Cloud
-
-This project is configured for deployment to Pipecat Cloud. You can learn how to deploy to Pipecat Cloud in the [Pipecat Quickstart Guide](https://docs.pipecat.ai/getting-started/quickstart#step-2%3A-deploy-to-production).
-
-Refer to the [Pipecat Cloud Documentation](https://docs.pipecat.ai/deployment/pipecat-cloud/introduction) to learn more about configuring, deploying, and managing your agents in Pipecat Cloud.
 
 
-## Learn More
-
-- [Pipecat Documentation](https://docs.pipecat.ai/)
-- [Pipecat GitHub](https://github.com/pipecat-ai/pipecat)
-- [Pipecat Examples](https://github.com/pipecat-ai/pipecat-examples)
-- [Discord Community](https://discord.gg/pipecat)
